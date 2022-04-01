@@ -55,6 +55,6 @@ def get_recommendation(request, popular_movie_list):
         movie = movie_dict[item[0]]
         if movie not in popular_movie_list and movie not in added_movie_list:
             result.append({'movieid': movie.movieid, 'poster': movie.poster})
-        if len(result) == 100:
+        if len(result) == 10:
             break
     return [result[i] for i in random.sample(range(len(result)), 5)]
